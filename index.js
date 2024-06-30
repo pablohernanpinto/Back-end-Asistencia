@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors'); // Importa el paquete CORS
 const app = express();
-const port = 3000;
-const db = require('./db');
+const port = process.env.PORT || 3000;
+const db = require('./src/db');
 
 app.use(cors()); // Usa el middleware CORS
 
@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 // Ejemplo de ruta para obtener datos de la base de datos
 app.get('/prueba', (req, res) => {
-  db.query('SELECT * FROM `data`', (err, results) => {
+  db.query('SELECT * FROM `insertar`', (err, results) => {
     if (err) {
       res.status(500).send('Error retrieving data from database');
       return;
