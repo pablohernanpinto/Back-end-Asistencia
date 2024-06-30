@@ -7,7 +7,7 @@ const db = require('./src/db');
 app.use(cors()); // Usa el middleware CORS
 
 app.use(express.json());
-
+ 
 // Ruta de prueba para verificar la conexión
 app.get('/', (req, res) => {
   res.send('Hello World!');
